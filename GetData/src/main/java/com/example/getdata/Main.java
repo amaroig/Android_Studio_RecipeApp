@@ -26,27 +26,38 @@ public class Main {
         try {
 
             URL url = new URL("https://www.themealdb.com/api/json/v1/1/search.php?s=p");
+            //CREATES CONNECTION
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 
+            //GET RESPONSE CODE == 200
             int responseCode = connection.getResponseCode();
 //            System.out.println(responseCode);
+            //READ THE JSON URL DATA
             BufferedReader reader = new BufferedReader( new InputStreamReader(connection.getInputStream()));
             String inputLine;
+            // STORES THE DATA IN A STRING
             StringBuffer stringBuffer = new StringBuffer();
+            //RUN WHILE THE VAR INPUTLINE IS NOT EMPTY
             while ((inputLine = reader.readLine()) != null){
+                //APPEND ALL THE DATA TO THE VAR INPUTLINE
                 stringBuffer.append(inputLine);
             }
+            //CLOSE THE CONNECTION
             reader.close();
 //            System.out.println(stringBuffer.toString());
+            //JSON OBJECT TO MANIPULATE THE DATA
             JSONObject json = new JSONObject(stringBuffer.toString());
+            //GETTING THE ARRAY FROM MEALS[]
             JSONArray myMeals = json.getJSONArray("meals");
 
+            //LOOPING THE ARRAY TO SEE ALL THE MEALS
             for (int i = 0; i < myMeals.length(); i++) {
                 //TODO: Get every single item i need in the meals array
             }
             //Get all the array from meals DONE
 //            System.out.println(json.getJSONArray("meals"));
         }catch (Exception e) {
+            //DISPLAY ANY ERROR IF ANY
             System.out.println(e);
         }
         //TODO: Render just the data i need
