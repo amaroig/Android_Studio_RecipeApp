@@ -53,15 +53,18 @@ public class Main {
             //LOOPING THE ARRAY TO SEE ALL THE MEALS
             for (int i = 0; i < myMeals.length(); i++) {
                 //TODO: Get every single item i need in the meals array
-                System.out.println("\n\n");
-                System.out.println(myMeals.toString());
-
+//                System.out.println("\n\n");
+//                System.out.println(myMeals.toString());
+                //Loop the entire Array from tue url Json
+                JSONObject mealArray = myMeals.getJSONObject(i);
+                //extract just the Meal name in the entire array
+                System.out.println(mealArray.get("strMeal"));
             }
             //Get all the array from meals DONE
 //            System.out.println(json.getJSONArray("meals"));
         }catch (Exception e) {
             //DISPLAY ANY ERROR IF ANY
-            System.out.println(e);
+            System.out.println(e.toString());
         }
         //TODO: Render just the data i need
         //TODO:Diplay Data in PrintLn
