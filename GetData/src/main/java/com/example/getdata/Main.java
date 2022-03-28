@@ -58,7 +58,10 @@ public class Main {
                 //Loop the entire Array from tue url Json
                 JSONObject mealArray = myMeals.getJSONObject(i);
                 //extract just the Meal name in the entire array
+                //getting al the data from meals
                 System.out.println(mealArray.get("strMeal"));
+
+
             }
             //Get all the array from meals DONE
 //            System.out.println(json.getJSONArray("meals"));
