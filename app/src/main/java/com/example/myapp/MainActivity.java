@@ -7,7 +7,9 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.Toast;
 
 import com.example.myapp.databinding.ActivityMainBinding;
@@ -47,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         userList = new ArrayList<>();
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, userList);
         binding.userList.setAdapter(listAdapter);
+
+        //Making Item clickable and getting the index of the item to pass it into a new View
+      binding.userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          @Override
+          public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+              Toast.makeText(getApplicationContext(), "Clicked index " + i,Toast.LENGTH_SHORT).show();
+//              System.out.println("clicked" + i);
+          }
+      });
 
 
 
