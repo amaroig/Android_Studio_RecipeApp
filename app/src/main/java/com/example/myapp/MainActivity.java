@@ -1,12 +1,14 @@
 package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.myapp.databinding.ActivityMainBinding;
 
@@ -18,11 +20,14 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 
+
 import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
+    //la variable userList originalmente fue por que este app era para una lista de usarios Luego cambie de idea LOL XD
     ArrayList<String> userList;
     ProgressDialog progressDialog;
     ArrayAdapter<String> listAdapter;
@@ -42,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         userList = new ArrayList<>();
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, userList);
         binding.userList.setAdapter(listAdapter);
+
+
 
     }
 
@@ -102,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     String mealName = (String) mealArray.get("strMeal");
                     System.out.println(mealName);
                     userList.add(mealName);
+
 
 
 
