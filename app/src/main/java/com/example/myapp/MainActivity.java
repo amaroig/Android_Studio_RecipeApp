@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             mainHandler.post(new Runnable() {
                 @Override
                 public void run() {
+                    //MAKE PROGRESS bAR
                     progressDialog = new ProgressDialog(MainActivity.this);
                     progressDialog.setMessage("Fetching Meals");
 //                    progressDialog.setCancelMessage(false);
