@@ -54,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
       binding.userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
           @Override
           public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-              Toast.makeText(getApplicationContext(), "Clicked index " + i,Toast.LENGTH_SHORT).show();
+              Toast.makeText(getApplicationContext(), userList.get(i),Toast.LENGTH_SHORT).show();
 //              System.out.println("clicked" + i);
+
           }
       });
 
