@@ -28,6 +28,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Variable para poner en Intent para pasarlo a otro activity
     public static final String MEAL_NAME = "com.example.MealData";
 
     ActivityMainBinding binding;
